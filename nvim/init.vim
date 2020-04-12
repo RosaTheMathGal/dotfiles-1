@@ -1,3 +1,16 @@
+" PLUGINS {{{1
+function! PackInit() abort
+  packadd minpac
+  
+  call minpac#init()
+  call minpac#add('k-takata/minpac', { 'type': 'opt' })
+
+  call minpac#add('justinmk/vim-dirvish')
+endfunction
+
+command! PackClean call PackInit() | call minpac#clean()
+command! PackUpdate call PackInit() | call minpac#update()
+
 " BASIC {{{1
 set cursorline
 set number
@@ -23,6 +36,9 @@ set smartcase
 " More intuitive splits.
 set splitbelow
 set splitright
+
+" Disable netrw.
+let g:loaded_netrwPlugin = 1
 
 " MAPPINGS {{{1
 
