@@ -5,6 +5,7 @@ function! PackInit() abort
   call minpac#init()
   call minpac#add('k-takata/minpac', { 'type': 'opt' })
 
+  call minpac#add('romainl/Apprentice')
   call minpac#add('justinmk/vim-dirvish')
 endfunction
 
@@ -22,6 +23,7 @@ set softtabstop=4
 
 " COLORS {{{1
 set termguicolors
+colorscheme apprentice
 
 " MISCELLANEOUS {{{1
 filetype plugin indent on
