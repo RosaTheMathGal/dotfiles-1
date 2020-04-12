@@ -31,3 +31,10 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 " Better yanking.
 nnoremap <silent> Y y$
+
+" AUTOCOMMANDS {{{1
+augroup IndentTwoSpaces
+  autocmd!
+  autocmd FileType css,html,javascript,lua,ruby,vim,yaml setlocal shiftwidth=2
+    \ softtabstop=2
+augroup END
