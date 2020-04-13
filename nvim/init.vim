@@ -56,3 +56,8 @@ augroup IndentTwoSpaces
   autocmd FileType css,html,javascript,lua,ruby,vim,yaml setlocal shiftwidth=2
     \ softtabstop=2
 augroup END
+
+augroup TrimWhitespace
+  autocmd!
+  autocmd BufWritePre * %s/\s\+$//e
+augroup END
