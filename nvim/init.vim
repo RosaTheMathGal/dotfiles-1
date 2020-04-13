@@ -1,7 +1,7 @@
 " PLUGINS {{{1
 function! PackInit() abort
   packadd minpac
-  
+
   call minpac#init()
   call minpac#add('k-takata/minpac', { 'type': 'opt' })
 
@@ -28,6 +28,7 @@ colorscheme apprentice
 " MISCELLANEOUS {{{1
 filetype plugin indent on
 set nojoinspaces
+set path=.,**
 set scrolloff=1
 set undofile
 
@@ -44,8 +45,20 @@ let g:loaded_netrwPlugin = 1
 
 " MAPPINGS {{{1
 
+" More ergonomic movement between buffers.
+nnoremap <Space>b :ls<CR>:b<Space>
+
+" Find files.
+nnoremap <Space>f :find<Space>
+nnoremap <Space>s :sfind<Space>
+nnoremap <Space>v :vert sfind<Space>
+
 " Clear highlighting.
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
+" More consistent :substitute repetition.
+nnoremap <silent> & :&&<CR>
+xnoremap <silent> & :&&<CR>
 
 " Better yanking.
 nnoremap <silent> Y y$
